@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Data Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Data Dashboard</h1>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Rating</th>
+                    <th>Account Type</th>
+                    <th>Location</th>
+                    <th>Device</th>
+                    <th>Keyword</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <canvas id="keywordChart"></canvas>
+        <canvas id="ratingChart"></canvas>
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="accountChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="locationChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="deviceChart"></canvas>
+            </div>
+        </div>    
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
